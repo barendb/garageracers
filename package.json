@@ -1,0 +1,31 @@
+{
+  "name": "garageracers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barendb/garageracers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barendb/garageracers/issues"
+  },
+  "homepage": "https://github.com/barendb/garageracers#readme",
+  "dependencies": {
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.5",
+    "webpack": "beta",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^2.4.0"
+  }
+}
