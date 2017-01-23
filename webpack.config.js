@@ -3,35 +3,55 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var webpackConfig = {
-	entry: './src/assets/js/index.ts',
+	entry: [
+		'./src/assets/js/index.ts',
+		'./src/assets/css/styles.less',
+
+	],
 	output: {
-		path: path.resolve(__dirname, 'src/dist'),
+		publicPath : '/dist/',
+		path: __dirname + '/src/dist/',
 		filename: 'index.js'
 	},
 	module: {
 		rules: [
 			{
 				test: /\.tsx?$/,
-				loader: 'ts-loader',
+				loader: 'ts-loader?' + JSON.stringify({
+					transpileOnly: true
+				}),
 				exclude: /node_modules/,
 			},
 			{
 				test: /\.less$/,
-				use: [
-					'style-loader',
-					{ loader: 'css-loader', options: { importLoaders: 1 } },
-					{ loader: 'less-loader', options: { strictMath: true, noIeCompat: true } }
-				]
+				exclude: /node_modules/,
+				loader: ExtractTextPlugin.extract({
+					fallbackLoader: 'style-loader',
+					loader: [
+						{
+							loader: 'css-loader',
+							options: {
+								importLoaders: 1,
+								sourceMap: true
+							}
+						},
+						{
+							loader: 'less-loader',
+							options: {
+								sourceMap: true
+							}
+						}
+					]
+				})
 			}
 		]
 	},
-	resolve: {
-		extensions: ['.tsx', '.ts', '.js', '.less']
-	},
 	plugins: [
-		// extract CSS into separate file
 		new ExtractTextPlugin('styles.css')
-	]
+	],
+	resolve: {
+		extensions: ['.ts', '.tsx', '.js', '.less']
+	}
 };
 
 // Our Webpack Defaults
