@@ -1,0 +1,5 @@
+import '../svg/facebook.svg'
+import '../svg/garageracers.svg'
+import '../svg/gear.svg'
+import '../svg/instagram.svg'
+import '../svg/youtube.svg'

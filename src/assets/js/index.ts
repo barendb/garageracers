@@ -1,3 +1,7 @@
 /// <reference path="index.d.ts" />
+// var files = require.context('svg-sprite-loader!../svg', false, /(garageracers|gear|youtube|instagram|facebook)\.svg$/);
+// files.keys().forEach(files);
 
-require('!style-loader!css-loader!less-loader!../css/main.less');
+import './svg'
+
+console.log('hello world - why you no change');

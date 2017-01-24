@@ -9,7 +9,7 @@ var webpackConfig = {
 
 	],
 	output: {
-		publicPath : '/dist/',
+		publicPath: '/dist/',
 		path: __dirname + '/src/dist/',
 		filename: 'index.js'
 	},
@@ -43,6 +43,13 @@ var webpackConfig = {
 						}
 					]
 				})
+			},
+			{
+				test: /\.svg$/,
+				loader: 'svg-sprite-loader?' + JSON.stringify({
+					name: '[name]',
+					prefixize: true
+				})
 			}
 		]
 	},
@@ -50,7 +57,7 @@ var webpackConfig = {
 		new ExtractTextPlugin('styles.css')
 	],
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.less']
+		extensions: ['.ts', '.tsx', '.js', '.less', '.svg']
 	}
 };
 
