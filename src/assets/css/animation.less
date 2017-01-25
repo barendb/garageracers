@@ -1,0 +1,85 @@
+.slidein {
+	animation-name: slidein;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+
+.garageracers {
+	animation-delay: .3s;
+	animation-duration: 2s;
+	.slidein;
+}
+
+.gear {
+	animation-name: gearsliderotate;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	animation-delay: 2.3s;
+	animation-duration: 2s;
+}
+
+.background {
+	animation-name: blur;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	transform: translateZ(0)
+}
+
+@keyframes blur {
+	from {
+		filter: blur(20px);
+		opacity: 0;
+	}
+
+	to {
+		filter: blur(0px);
+		opacity: .5;
+	}
+}
+
+
+@keyframes gearsliderotate {
+	from {
+		opacity: 0;
+		margin-left: 100%;
+		width: 300%;
+	}
+
+	1% {
+		opacity: 1;
+	}
+
+	to {
+		transform: rotate(-1440deg);
+		margin-left: 275px;
+		width: 100%;
+		opacity: 1;
+	}
+}
+
+
+@keyframes slidein {
+	0% {
+		opacity: 0;
+		margin-left: 100%;
+		width: 300%;
+	}
+
+	1% {
+		opacity: 1;
+	}
+
+
+	100% {
+		margin-left: 0%;
+		width: 100%;
+		opacity: 1;
+	}
+}
+
+
+
+
+//filter: alpha(opacity=50);
