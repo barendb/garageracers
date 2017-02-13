@@ -4,4 +4,14 @@
 
 import './svg'
 
-console.log('hello world - why you no change');
+
+function setBackgroundImageSize() {
+	let background = document.querySelector('.background');
+	background.style.height = window.innerHeight + 'px';
+}
+
+window.onresize = () => {
+	setBackgroundImageSize();
+}
+
+setBackgroundImageSize();
