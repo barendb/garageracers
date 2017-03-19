@@ -4,13 +4,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var webpackConfig = {
 	entry: [
-		'./src/assets/js/index.ts',
-		'./src/assets/css/styles.less',
+		'./assets/js/index.ts',
+		'./assets/css/styles.less',
 
 	],
 	output: {
 		publicPath: '/dist/',
-		path: __dirname + '/src/dist/',
+		path: __dirname + '/dist/',
 		filename: 'index.js'
 	},
 	module: {
@@ -65,7 +65,7 @@ var webpackConfig = {
 var defaultConfig = {
 	devtool: 'source-map',
 	devServer: {
-		contentBase: './src',
+		contentBase: './',
 		compress: true,
 		port: 9000
 	}
